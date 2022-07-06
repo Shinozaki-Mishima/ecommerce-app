@@ -1,0 +1,13 @@
+# Ignore folder, not necessary for project
+_dev/
+
+# Ignore images, OPTIONAL
+images/
+
+# Ignore vendor, will be managed by composer
+vendor/
+
+# Ignore .env files, API keys should hidden
+.env
+
+.envServer

@@ -1,0 +1,16 @@
+# Description: allow access to files ending with specific extensions.
+# Also tells the server to redirect all requests to the index file
+# https://phprouter.com/
+# https://github.com/phprouter/main
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{REQUEST_URI}  !(\.png|\.jpg|\.gif|\.jpeg|\.zip|\.css|\.svg|\.js)$
+
+#### THIS IS FOR TESTING PURPOSES ###
+# Purpose: For testing project(s) locally
+# Location: In project directory
+# Rename to: .htaccess
+# Note: You can use multiple projects locally
+# Warning: Do not use .htaccess in htdocs and this file at the same time
+### localhost ONLY
+RewriteRule (.*) public/index.php [QSA,L]
