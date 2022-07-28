@@ -20,5 +20,5 @@
         <input type="password" name="password">
     </p>
 
-    <input type="submit" name="register">
+    <input type="submit" name="registration">
 </form>

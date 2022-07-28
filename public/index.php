@@ -16,7 +16,11 @@ get('/home', 'app/Controllers/Homepage.php');
 get('/registration', 'app/Controllers/Registration.php');
 post('/registration', 'app/Controllers/Registration.php');
 
+get('/login', 'app/Controllers/Login.php');
+post('/login', 'app/Controllers/Login.php');
 
+get('/logout', 'app/Controllers/Logout.php');
+post('/logout', 'app/Controllers/Logout.php');
 
 // ##################################################
 // ##################################################
