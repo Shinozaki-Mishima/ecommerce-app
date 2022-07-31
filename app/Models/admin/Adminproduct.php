@@ -15,7 +15,7 @@ class Adminproduct extends Product {
             "product_image3" => "images/products/iphone1-1.jpg",
             "product_image4" => "images/products/iphone1-1.jpg",
             "product_status" => $inputs["product_status"],
-            "product_category" => $inputs["product_category"],
+            "product_category" => $inputs["product_category"]
         ];
 
         $sql = "INSERT INTO .`products`
@@ -34,7 +34,7 @@ class Adminproduct extends Product {
         `product_category`)
         VALUES
         (
-            NULL:
+            NULL,
             :product_title,
             :product_description,
             :product_price,

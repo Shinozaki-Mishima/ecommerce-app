@@ -13,8 +13,10 @@ $prouct_object = new Adminproduct($db_object);
 
 $url = (empty($id)) ? "admin/products/add" : "admin/products/edit/$id";
 
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    if(isset($_POST["add_product"])){
+if($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+    if(isset($_POST["add_product"]))
+    {
         echo "you clicked a button";
         $prouct_object->addProduct($_POST);
     }
