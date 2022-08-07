@@ -22,11 +22,19 @@ post('/login', 'app/Controllers/Login.php');
 get('/logout', 'app/Controllers/Logout.php');
 post('/logout', 'app/Controllers/Logout.php');
 
+get('/store', 'app/Controllers/Store.php');
+post('/store', 'app/Controllers/Store.php');
+
+// admin
 get('/admin/products/add', 'app/Controllers/admin/Adminproduct.php');
 post('/admin/products/add', 'app/Controllers/admin/Adminproduct.php');
 
-get('/store', 'app/Controllers/Store.php');
-post('/store', 'app/Controllers/Store.php');
+// load same controller for add, using the same controller for both functionalities
+get('/admin/products/edit/$id', 'app/Controllers/admin/Adminproduct.php');
+post('/admin/products/edit/$id', 'app/Controllers/admin/Adminproduct.php');
+
+get('/admin/products/view', 'app/Controllers/admin/Adminviewproduct.php');
+post('/admin/products/view', 'app/Controllers/admin/Adminviewproduct.php');
 
 // ##################################################
 // ##################################################

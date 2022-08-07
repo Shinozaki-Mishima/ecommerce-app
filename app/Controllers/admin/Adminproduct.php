@@ -9,16 +9,30 @@ require_once APP_DIR."Models/admin/Adminproduct.php";
 // create objects
 $db_object = new Database();
 $user_object = new User($db_object);
-$prouct_object = new Adminproduct($db_object);
+$product_object = new Adminproduct($db_object);
 
 $url = (empty($id)) ? "admin/products/add" : "admin/products/edit/$id";
 
 if($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-    if(isset($_POST["add_product"]))
+    if(isset($_POST["add_product"]) && empty($id))
     {
         echo "you clicked a button";
-        $prouct_object->addProduct($_POST);
+        $product_object->addProduct($_POST);
+    }
+
+    if(isset($_POST["add_product"]) && !empty($id))
+    {
+        echo "you clicked a button";
+        $product_object->updateProduct($id, $_POST);
+    }
+}
+
+// call the func getProductDetails and load a product based by the prod id
+if(!empty($id)){
+    $product_details = $product_object->getProductDetails($id);
+    foreach ($product_details as $data) {
+        # code...
     }
 }
 

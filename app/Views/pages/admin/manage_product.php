@@ -17,13 +17,15 @@
 
                     <div class="form-group">
                         <label for="product_description">Product Description:</label>
-                        <input 
-                        type="text" 
+                        <textarea 
                         class="form-control" 
-                        id="product_description" 
-                        name="product_description" 
-                        value="<?php echo $product_description; ?>">
-                    </div>
+                        rows="5" 
+                        id="product_description"
+                        name="product_description"
+                        > 
+                            <?php echo $product_description; ?>
+                        </textarea>
+                    </div> 
 
                     <div class="form-group">
                         <label for="product_price">Product Price:</label>
