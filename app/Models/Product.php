@@ -20,7 +20,7 @@ class Product
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
-    // get 1 product
+    // get 1 product, and fetch its details
     public function getProductDetails($product_id)
     {
         $sql = "SELECT * FROM products WHERE product_id = ?";

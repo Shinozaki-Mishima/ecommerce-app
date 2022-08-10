@@ -124,12 +124,14 @@
 <div class="container">
     <div class="row">
 
-        <?php foreach ($productDetails as $data): ?>
+        <?php foreach ($productDetails as $data): 
+            $link = BASE_URL . "details/{$data["product_id"]}";
+            ?>
 
             <div class="col-md-3 col-sm-6">
                 <div class="product-grid">
                     <div class="product-image">
-                        <a href="#" class="image">
+                        <a href="<?php echo $link;?>" class="image">
                             <img class="pic-1" src="<?php echo BASE_URL . $data["product_image1"]; ?>">
                         </a>
                         <span class="product-sale-label">sale</span>
@@ -141,9 +143,11 @@
                         </ul>
                     </div>
                     <div class="product-content">
-                        <h3 class="title"><a href="#">
-                            <?php echo $data["product_title"]; ?>
-                        </a></h3>
+                        <h3 class="title">
+                            <a href="<?php echo $link;?>">
+                                <?php echo $data["product_title"]; ?>
+                            </a>
+                        </h3>
                         <div class="price">
                             <span>$85.50</span>
                             $<?php echo $data["product_price"]; ?>
