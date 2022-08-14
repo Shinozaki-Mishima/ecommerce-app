@@ -18,14 +18,16 @@ function startValidation($images)
     return true;
 }
 
-function startUpload($images) {
+function startUpload($images) 
+{
+
     foreach ($images as $image) {
 
         // upload file if it is selected
         if ($image->selected && !upload($image->full_path, $image->input_name, $image->new_name)) {
             return false;
         }
-        // remove pre files
+        // remove prev files
         if ($image->selected) {
             removeFile($image->full_path, $image->prev_name);
         }
@@ -42,7 +44,6 @@ function removeFile($full_path, $filename)
     if (file_exists($full_path . $filename)) {
         unlink($full_path . $filename);
     }
-
     return true;
 }
 
@@ -87,7 +88,7 @@ function getFileName($filename, $upload_folder)
     }
 
     // https://stackoverflow.com/questions/1846202/how-to-generate-a-random-unique-alphanumeric-string
-    $bytes = random_bytes(16);
+    $bytes = random_bytes(15);
     $name = bin2hex($bytes);
 
     $new_name = $target_dir . $name . "." . $imageFileType;
@@ -96,12 +97,13 @@ function getFileName($filename, $upload_folder)
 }  // end of function
 
 // prev_name is the input name
-function upload($full_path, $input_name, $new_name) 
+function upload($full_path, $old_name, $new_name) 
 {
     $full_name = $full_path . $new_name;
+
     // if everything is ok, try to upload file
-    if (move_uploaded_file($_FILES[$input_name]["tmp_name"], $full_name)) {
-        echo "The file uplaod" . $full_name;
+    if (move_uploaded_file($_FILES[$old_name]["tmp_name"], $full_name)) {
+        echo "The file uplaod " . $full_name;
     } else {
         echo "Sorry, there was an error uploading your file.";
         return false;

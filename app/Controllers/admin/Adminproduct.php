@@ -17,15 +17,15 @@ $url = (empty($id)) ? "admin/products/add" : "admin/products/edit/$id";
 if($_SERVER["REQUEST_METHOD"] == "POST") 
 {
     // add
-    if(isset($_POST["add_product"]) && !empty($id))
+    if(isset($_POST["add_product"]) && empty($id))
     {
         echo "you clicked a button to add";
 
         $images = [
-            new Customimage("product_image1", 1, $_POST["previous_product_image1"]),
-            new Customimage("product_image2", 0, $_POST["previous_product_image2"]),
-            new Customimage("product_image3", 0, $_POST["previous_product_image3"]),
-            new Customimage("product_image4", 0, $_POST["previous_product_image4"])
+            new Customimage("product_image1", 1),
+            new Customimage("product_image2", 0),
+            new Customimage("product_image3", 0),
+            new Customimage("product_image4", 0)
         ];
         if(startValidation($images)){
              //exit; // for testing
@@ -50,6 +50,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             new Customimage("product_image3", 0, $_POST["previous_product_image3"]),
             new Customimage("product_image4", 0, $_POST["previous_product_image4"])
         ];
+        
         if(startValidation($images)){
              //exit; // for testing
             if (startUpload($images)) {
