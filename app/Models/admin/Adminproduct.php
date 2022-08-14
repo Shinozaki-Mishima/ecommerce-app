@@ -3,7 +3,7 @@
 class Adminproduct extends Product {
 
     // add product
-    public function addProduct($inputs) 
+    public function addProduct($inputs, $images) 
     {
         $data = [
             "product_title" => $inputs["product_title"],
@@ -11,10 +11,10 @@ class Adminproduct extends Product {
             "product_price" => $inputs["product_price"],
             "product_discount_amount" => 0,
             "product_quantity" => $inputs["product_quantity"],
-            "product_image1" => "images/products/iphone1-1.jpg",
-            "product_image2" => "images/products/iphone1-1.jpg",
-            "product_image3" => "images/products/iphone1-1.jpg",
-            "product_image4" => "images/products/iphone1-1.jpg",
+            "product_image1" => $images[0]->new_name,
+            "product_image2" => $images[1]->new_name,
+            "product_image3" => $images[2]->new_name,
+            "product_image4" => $images[3]->new_name,
             "product_status" => $inputs["product_status"],
             "product_category" => $inputs["product_category"]
         ];
@@ -56,7 +56,7 @@ class Adminproduct extends Product {
     }
 
     // update function
-    public function updateProduct($id, $inputs) 
+    public function updateProduct($id, $inputs, $images) 
     {
         $data = [
             "product_title" => $inputs["product_title"],
@@ -64,10 +64,10 @@ class Adminproduct extends Product {
             "product_price" => $inputs["product_price"],
             "product_discount_amount" => 0,
             "product_quantity" => $inputs["product_quantity"],
-            "product_image1" => "images/products/iphone1-1.jpg",
-            "product_image2" => "images/products/iphone1-1.jpg",
-            "product_image3" => "images/products/iphone1-1.jpg",
-            "product_image4" => "images/products/iphone1-1.jpg",
+            "product_image1" => $images[0]->new_name,
+            "product_image2" => $images[1]->new_name,
+            "product_image3" => $images[2]->new_name,
+            "product_image4" => $images[3]->new_name,
             "product_status" => $inputs["product_status"],
             "product_category" => $inputs["product_category"],
             "product_id" => $id

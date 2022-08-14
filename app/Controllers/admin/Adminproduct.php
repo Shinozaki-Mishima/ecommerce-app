@@ -5,7 +5,8 @@ require_once APP_DIR."Config/Database.php";
 require_once APP_DIR."Models/User.php";
 require_once APP_DIR."Models/Product.php";
 require_once APP_DIR."Models/admin/Adminproduct.php";
-
+require_once APP_DIR."Utils/Customimage.php";
+require_once APP_DIR."Utils/UploadFile.php";
 // create objects
 $db_object = new Database();
 $user_object = new User($db_object);
@@ -15,16 +16,50 @@ $url = (empty($id)) ? "admin/products/add" : "admin/products/edit/$id";
 
 if($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-    if(isset($_POST["add_product"]) && empty($id))
-    {
-        echo "you clicked a button";
-        $product_object->addProduct($_POST);
-    }
-
+    // add
     if(isset($_POST["add_product"]) && !empty($id))
     {
-        echo "you clicked a button";
-        $product_object->updateProduct($id, $_POST);
+        echo "you clicked a button to add";
+
+        $images = [
+            new Customimage("product_image1", 1, $_POST["previous_product_image1"]),
+            new Customimage("product_image2", 0, $_POST["previous_product_image2"]),
+            new Customimage("product_image3", 0, $_POST["previous_product_image3"]),
+            new Customimage("product_image4", 0, $_POST["previous_product_image4"])
+        ];
+        if(startValidation($images)){
+             //exit; // for testing
+            if (startUpload($images)) {
+                $product_object->addProduct($_POST, $images);
+            } else {
+            echo "Error trying to upload files.";
+            }
+        } else {
+            echo "Error trying to validate files.";
+        }
+    }
+
+    // edit
+    if(isset($_POST["add_product"]) && !empty($id))
+    {
+        echo "you clicked a button to edit";
+
+        $images = [
+            new Customimage("product_image1", 1, $_POST["previous_product_image1"]),
+            new Customimage("product_image2", 0, $_POST["previous_product_image2"]),
+            new Customimage("product_image3", 0, $_POST["previous_product_image3"]),
+            new Customimage("product_image4", 0, $_POST["previous_product_image4"])
+        ];
+        if(startValidation($images)){
+             //exit; // for testing
+            if (startUpload($images)) {
+                $product_object->updateProduct($id, $_POST, $images);
+            } else {
+            echo "Error trying to upload files.";
+            }
+        } else {
+            echo "Error trying to validate files.";
+        }
     }
 }
 
