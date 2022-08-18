@@ -28,6 +28,10 @@ post('/store', 'app/Controllers/Store.php');
 get('/details/$id', 'app/Controllers/Details.php');
 post('/details/$id', 'app/Controllers/Details.php');
 
+get('/cart', 'app/Controllers/Cart.php');
+post('/cart', 'app/Controllers/Cart.php');
+
+
 // admin
 get('/admin/products/add', 'app/Controllers/admin/Adminproduct.php');
 post('/admin/products/add', 'app/Controllers/admin/Adminproduct.php');
