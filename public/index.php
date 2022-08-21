@@ -43,6 +43,10 @@ post('/admin/products/edit/$id', 'app/Controllers/admin/Adminproduct.php');
 get('/admin/products/view', 'app/Controllers/admin/Adminviewproduct.php');
 post('/admin/products/view', 'app/Controllers/admin/Adminviewproduct.php');
 
+get('/admin/dashboard', 'app/Controllers/admin/Admindashboard.php');
+post('/admin/dashboard', 'app/Controllers/admin/Admindashboard.php');
+
+
 // ##################################################
 // ##################################################
 // ##################################################

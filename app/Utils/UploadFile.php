@@ -28,7 +28,7 @@ function startUpload($images)
             return false;
         }
         // remove prev files
-        if ($image->selected) {
+        if ($image->selected && $image->prev_name != "") {
             removeFile($image->full_path, $image->prev_name);
         }
 

@@ -1,0 +1,189 @@
+body {
+    overflow-x: hidden;
+ }
+
+/* Toggle Styles */
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+      
+      
+      
+      
+      /* Custom CSS */
+
+        /* 
+        F6F5F5 - sidebar (white)
+        8382A0 - background (light purple)
+        211C37 - text color (dark blue)
+        5B709B - text highlighed (navy blue)
+        */
+
+
+        /* CSS Variables */
+        :root {
+            --theme-color: #211C37;
+            --admin-bg: #dddde3;
+            --admin-sidebar-bg: #fff;
+            --admin-font: 'Public Sans', sans-serif;
+            --admin-font-color: #211C37;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            text-transform: uppercase;
+        }
+
+        /* Theme color - For highlighting certain elements */
+        .theme {
+            color: var(--theme-color) !important;
+        }
+
+        /* Background and font color for body / all*/
+        body {
+            background-color: var(--admin-bg);
+            color: var(--admin-font-color) !important;
+            font-family: var(--admin-font);
+            line-height: 1.5em;
+        }
+
+        /* Change background color of sidebar */
+        #sidebar-wrapper {
+            background-color: var(--admin-sidebar-bg) !important;
+        }
+
+        .sidebar-nav li a {
+            color: black;
+            padding-left: 10%;
+        }
+
+
+        .sidebar-nav li a:hover {
+            text-decoration: none;
+            color: #fff;
+            background: #5B709B;
+        }
+
+        /* Dashboard content font */
+        #page-content-wrapper {
+            font-family: 'Public Sans', sans-serif;
+            font-weight: 300;
+        }
