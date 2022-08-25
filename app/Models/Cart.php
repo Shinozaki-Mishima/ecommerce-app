@@ -33,6 +33,7 @@ class Cart
         foreach ($result as $data) {
             // this = referes to obj in class
             $this->sub_total += $data["product_price"] * $data["cart_quantity"];
+            $this->total += $data["product_price"] * $data["cart_quantity"];
         }
         $this->cart_details = $result;
 
@@ -86,4 +87,16 @@ class Cart
         $stmt->execute([$cart_quantity, $user_id, $product_id]);
     }
     
+    // get subtotal
+    public function getSubTotal(){
+        return $this->sub_total;
+    }
+    // get total 
+    public function getTotal(){
+        return $this->total;
+    }
+    // calc total
+    public function calculateTotal(){
+        return $this->sub_total;
+    }
 }

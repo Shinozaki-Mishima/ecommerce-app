@@ -9,15 +9,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-/*
-TOFIX: FOR TESTING PURPOSES!!!!:
-
-$cart_object->addToCart(1, 2, 3);
-$cart_object->removeFromCart(1, 1);
-$cart_object->updateCart(1, 2, 5);
-$cart_details = $cart_object->getCartDetails(1);
-Debugger::debug($cart_details);
-*/
 $cartDetails = $cart_object->getCartDetails($user_id);
 $cart_object->calculateTotal();
 
@@ -27,5 +18,5 @@ $cart_object->calculateTotal();
 
 // require and load views
 require_once APP_DIR."Views/header.php";
-require_once APP_DIR."Views/pages/cart.php";
+require_once APP_DIR."Views/pages/checkout.php";
 require_once APP_DIR."Views/footer.php";
