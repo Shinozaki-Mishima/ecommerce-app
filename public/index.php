@@ -49,6 +49,8 @@ post('/admin/products/view', 'app/Controllers/admin/Adminviewproduct.php');
 get('/admin/dashboard', 'app/Controllers/admin/Admindashboard.php');
 post('/admin/dashboard', 'app/Controllers/admin/Admindashboard.php');
 
+get('/admin/discounts', 'app/Controllers/admin/Admindiscounts.php');
+post('/admin/discounts', 'app/Controllers/admin/Admindiscounts.php');
 
 // ##################################################
 // ##################################################

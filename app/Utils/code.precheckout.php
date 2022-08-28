@@ -6,6 +6,7 @@ require_once APP_DIR."Models/User.php";
 require_once APP_DIR."Models/Product.php";
 require_once APP_DIR."Models/Cart.php";
 require_once APP_DIR."Utils/code.isLoggedIn.php";
+require_once APP_DIR."Utils/Customhelper.php";
 
 // create objects
 $db_object = new Database();

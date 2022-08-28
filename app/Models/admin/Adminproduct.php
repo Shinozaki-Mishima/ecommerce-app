@@ -92,4 +92,66 @@ class Adminproduct extends Product {
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($data);
     }
-}
+
+
+    // discounts 
+    public function getAllDiscounts()
+    {
+        $sql = "SELECT * FROM discounts";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    // insert discount
+    public function addDiscount($inputs)
+    {
+        // format discount start and expiry date 
+        $format = "Y-m-d H:i:s";
+        $discount_start = date_format(date_create($inputs["discount_start"] . "00:00:00"), $format);
+        $discount_expiry = date_format(date_create($inputs["discount_expiry"] . "00:00:00"), $format);
+
+        $data = [
+            "discount_description" => $inputs["discount_description"],
+            "discount_percent" => $inputs["discount_percent"],
+            "discount_start" => $discount_start,
+            "discount_expiry" => $discount_expiry,
+            "discount_status" => $inputs["discount_status"],
+        ];
+
+        $sql = "INSERT INTO `discounts`
+        (`discount_id`,
+        `discount_description`,
+        `discount_percent`,
+        `discount_created`,
+        `discount_start`,
+        `discount_expiry`,
+        `discount_status`)
+        VALUES
+        (
+            NULL,
+            :discount_description,
+            :discount_percent,
+            current_timestamp(),
+            :discount_start,
+            :discount_expiry,
+            :discount_status
+        );        
+        ";
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($data);
+    }
+
+    // assign discount
+    public function assignDiscount($product_details, $discount_id){
+        $stmt = $this->pdo->prepare("UPDATE products SET discount_id = ? WHERE product_id = ?");
+        foreach ($product_details as $data) {
+            # code...
+            $product_id = $data["product_id"];
+            $stmt->execute([$discount_id, $product_id]);
+        }
+    }
+
+} // end of class

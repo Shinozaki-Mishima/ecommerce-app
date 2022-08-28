@@ -1,5 +1,7 @@
 <?php
 
+use Stripe\Customer;
+
 class Cart
 {
     protected $pdo = null;
@@ -21,10 +23,12 @@ class Cart
     public function getCartDetails($user_id)
     {
         $sql = "SELECT * 
-        FROM cart, products 
+        FROM cart, products, discounts 
         WHERE cart.product_id = products.product_id
+        AND products.product_id = discounts.discount_id
         AND cart.user_id = ?
         AND cart.cart_status = 'cart'";
+
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$user_id]);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -32,7 +36,10 @@ class Cart
         // get the sub total
         foreach ($result as $data) {
             // this = referes to obj in class
-            $this->sub_total += $data["product_price"] * $data["cart_quantity"];
+            $this->sub_total += Customhelper::calculateDiscountAmount(
+                $data["product_price"], 
+                $data["discount_percent"]) * $data["cart_quantity"];
+                
             $this->total += $data["product_price"] * $data["cart_quantity"];
         }
         $this->cart_details = $result;
