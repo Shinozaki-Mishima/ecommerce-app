@@ -21,6 +21,7 @@ Debugger::debug($cart_details);
 $cartDetails = $cart_object->getCartDetails($user_id);
 $cart_object->calculateTotal();
 
+
 // foreach ($productDetails as $data) {
 //     # code...
 // }

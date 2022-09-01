@@ -14,7 +14,10 @@ class Product
     // get all products
     public function getAllProducts()
     {
-        $sql = "SELECT * FROM products";
+        $sql = "SELECT *,
+        CAST(product_price - (discount_percent / 100 * product_price) AS DECIMAL(7,2)) product_discount_price
+        FROM products, discounts
+        WHERE products.discount_id = discounts.discount_id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

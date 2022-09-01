@@ -8,6 +8,7 @@ class Cart
     //
     private $sub_total = 0;
     private $total = 0;
+    private $discount_percent = 0;
     private $cart_details = array();
 
     /**
@@ -25,7 +26,7 @@ class Cart
         $sql = "SELECT * 
         FROM cart, products, discounts 
         WHERE cart.product_id = products.product_id
-        AND products.product_id = discounts.discount_id
+        AND products.discount_id = discounts.discount_id
         AND cart.user_id = ?
         AND cart.cart_status = 'cart'";
 
@@ -41,6 +42,7 @@ class Cart
                 $data["discount_percent"]) * $data["cart_quantity"];
                 
             $this->total += $data["product_price"] * $data["cart_quantity"];
+            $this->discount_percent += $data["discount_percent"];
         }
         $this->cart_details = $result;
 
@@ -105,5 +107,9 @@ class Cart
     // calc total
     public function calculateTotal(){
         return $this->sub_total;
+    }
+    // get discount 
+    public function getDiscount() {
+        return $this->discount_percent;
     }
 }

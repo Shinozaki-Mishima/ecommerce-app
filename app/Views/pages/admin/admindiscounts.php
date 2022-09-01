@@ -103,7 +103,7 @@
                     <select class="form-control" id="sel1" name="product_id">
 
                         <option value="0">All</option>
-                        <?php foreach ($product_details as $data): ?>
+                        <?php foreach ($product_details as $data) : ?>
 
                         <option value="<?php echo $data["product_id"]; ?>">
                             <?php echo $data["product_title"]; ?>
@@ -133,8 +133,14 @@
             </div>
 
             <div class="col-md-2">
-                <button class="btn btn-primary btn-block" name="assign_discount" type="submit">Assign</button>
-                <button class="btn btn-danger btn-block" name="remove_discount" type="submit">Remove</button>
+                <button 
+                class="btn btn-primary btn-block" 
+                name="assign_discount" 
+                type="submit">Assign</button>
+                <button 
+                class="btn btn-danger btn-block" 
+                name="remove_discount" 
+                type="submit">Remove</button>
             </div>
             
         </div>

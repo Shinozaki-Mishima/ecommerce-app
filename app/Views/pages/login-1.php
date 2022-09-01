@@ -13,7 +13,7 @@
              <form action="login" method="post"> 
                 <div class="form-group mb-3">
                     <input 
-                    namme="email"
+                    name="email"
                     id="inputEmail" 
                     type="email" 
                     placeholder="Email address" 
@@ -22,7 +22,7 @@
                 </div> 
                  <div class="form-group mb-3"> 
                     <input 
-                    namme="password"
+                    name="password"
                     id="inputPassword" 
                     type="password" 
                     placeholder="Password" 

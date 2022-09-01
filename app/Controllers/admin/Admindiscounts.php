@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST["assign_discount"])){
         if($_POST["product_id"] == 0) {
             // assign discount to all products
-            $product_details = $product_details->getAllProducts();
+            $product_details = $product_object->getAllProducts();
             $product_object->assignDiscount($product_details, $_POST["discount_id"]);
         } else {
             // assign to 1 product

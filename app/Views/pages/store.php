@@ -149,8 +149,8 @@
                             </a>
                         </h3>
                         <div class="price">
-                            <span>$85.50</span>
-                            $<?php echo $data["product_price"]; ?>
+                            <span>$<?php echo $data["product_price"]; ?></span>
+                            $<?php echo $data["product_discount_price"]; ?>
                         </div>
                     </div>
                 </div>

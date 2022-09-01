@@ -187,12 +187,16 @@
                                                         </div>
                                                         <div class="col-md-4 quantity">
                                                             <label for="quantity">Quantity:</label>
-                                                            <input id="quantity" type="number" value ="<?php echo $data["cart_quantity"];?>" class="form-control quantity-input">
+                                                            <input 
+															id="quantity" 
+															type="number" 
+															value ="<?php echo $data["cart_quantity"];?>" 
+															class="form-control quantity-input">
                                                         </div>
                                                         <div class="col-md-3 price">
                                                             <span><?php echo Customhelper::calculateDiscountAmount(
                 													$data["product_price"], 
-                													$data["discount_percent"]);?></span>
+                													$data["discount_percent"]); ?></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -208,7 +212,7 @@
 			 				<div class="summary">
 			 					<h3>Summary</h3>
 			 					<div class="summary-item"><span class="text">Subtotal</span><span class="price">$<?php echo $cart_object->getSubtotal();?></span></div>
-			 					<div class="summary-item"><span class="text">Discount</span><span class="price">$0</span></div>
+			 					<div class="summary-item"><span class="text">Discount</span><span class="price">%<?php echo $cart_object->getDiscount()?></span></div>
 			 					<div class="summary-item"><span class="text">Shipping</span><span class="price">$0</span></div>
 			 					<div class="summary-item"><span class="text">Total</span><span class="price">$<?php echo $cart_object->getTotal();?></span></div>
 			 					<button type="button" class="btn btn-primary btn-lg btn-block">Checkout</button>
