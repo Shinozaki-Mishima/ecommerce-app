@@ -34,6 +34,9 @@ post('/cart', 'app/Controllers/Cart.php');
 get('/checkout', 'app/Controllers/Checkout.php');
 post('/checkout', 'app/Controllers/Checkout.php');
 
+get('/checkout/success/$payment/$id', 'app/Controllers/Checkout-success.php');
+post('/checkout/success/$payment/$id', 'app/Controllers/Checkout-success.php');
+
 
 // admin
 get('/admin/products/add', 'app/Controllers/admin/Adminproduct.php');
