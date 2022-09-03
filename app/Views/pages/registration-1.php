@@ -1,52 +1,108 @@
 <style>
-    .login, .image{min-height: 100vh}.bg-image{background-image: url('https://res.cloudinary.com/dxfq3iotg/image/upload/v1561631318/img-123.jpg');background-size: cover;background-position: center center}
+    body#LoginForm{ 
+        background-image:url("https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg"); 
+        background-repeat:no-repeat; background-position:center; background-size:cover; padding:10px;
+    }
+
+.form-heading { color:#fff; font-size:23px;}
+.panel h2{ color:#444444; font-size:18px; margin:0 0 8px 0;}
+.panel p { color:#777777; font-size:14px; margin-bottom:30px; line-height:24px;}
+.login-form .form-control {
+  background: #f7f7f7 none repeat scroll 0 0;
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  font-size: 14px;
+  height: 50px;
+  line-height: 50px;
+}
+.main-div {
+  background: #ffffff none repeat scroll 0 0;
+  border-radius: 2px;
+  margin: 10px auto 30px;
+  max-width: 38%;
+  padding: 50px 70px 70px 71px;
+}
+
+.login-form .form-group {
+  margin-bottom:10px;
+}
+.login-form{ text-align:center;}
+.forgot a {
+  color: #777777;
+  font-size: 14px;
+  text-decoration: underline;
+}
+.login-form  .btn.btn-primary {
+  background: #ff0000 none repeat scroll 0 0;
+  border-color: #f0ad4e;
+  color: #ffffff;
+  font-size: 14px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+}
+.forgot {
+  text-align: left; margin-bottom:30px;
+}
+.botto-text {
+  color: #ffffff;
+  font-size: 14px;
+  margin: auto;
+}
+.login-form .btn.btn-primary.reset {
+  background: #ff9900 none repeat scroll 0 0;
+}
+.back { text-align: left; margin-top:10px;}
+.back a {color: #444444; font-size: 13px;text-decoration: none;}
 </style>
 
-<div class="container-fluid"> 
-    <div class="row no-gutter"> 
-        <div class="col-md-6 d-none d-md-flex bg-image"></div> 
-    <div class="col-md-6 bg-light"> 
-        <div class="login d-flex align-items-center py-5"> 
-        <div class="container"> <div class="row"> 
-            <div class="col-lg-7 col-xl-6 mx-auto">
-             <h3 class="display-4">LOGIN!!</h3> <br> 
-             <form action="login" method="post"> 
-                <div class="form-group mb-3">
-                    <input 
-                    namme="email"
-                    id="inputEmail" 
-                    type="email" 
-                    placeholder="Email address" 
-                    required="" autofocus="" 
-                    class="form-control rounded-pill border-0 shadow-sm px-4"> 
-                </div> 
-                 <div class="form-group mb-3"> 
-                    <input 
-                    namme="password"
-                    id="inputPassword" 
-                    type="password" 
-                    placeholder="Password" 
-                    required="" 
-                    class="form-control rounded-pill border-0 shadow-sm px-4 text-danger"><br> </div> 
-                 <div class="custom-control custom-checkbox mb-3"> 
-                    <input id="customCheck1" type="checkbox" checked class="custom-control-input"> 
-                    <label for="customCheck1" class="custom-control-label">Remember password</label> 
-                </div> 
-                 <button 
-                 type="submit" 
-                 name="login" 
-                 class="btn btn-danger btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign in</button> 
-                 <div class="text-center d-flex justify-content-between mt-4">
-                    <p> OR &nbsp<a href=" " class="font-italic text-muted"> 
-                        <u>Create Account</u>
-                        </a>
-                    </p>
-                    </div> 
-                </form> 
-            </div> 
-        </div> 
-    </div> 
-</div> 
-</div> 
-</div>
-</div>
+
+
+    <body id="LoginForm">
+        <div class="container">
+            <!-- <h1 class="form-heading">login Form</h1> -->
+            <div class="login-form">
+                <div class="main-div">
+                    <div class="panel">
+                        <h2>Registration</h2>
+                            <p>Please enter your email and password</p>
+                    </div>
+                    <form action="registration" method="post">
+
+                        <div class="form-group">
+
+
+                            <input type="text" class="form-control" name="first_name" placeholder="First Name">
+
+                        </div>
+
+                        <div class="form-group">
+
+
+                            <input type="text" class="form-control" name="last_name" placeholder="Last Name">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <input type="text" class="form-control" name="email" placeholder="Email">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <input type="password" class="form-control" name="password" placeholder="Password">
+
+                        </div>
+
+                        <div class="forgot">
+                            <p>Already have an account?</p><a href="login">Login here.</a>
+                        </div>
+                        <button type="submit" name="registration" class="btn btn-primary">Register</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+

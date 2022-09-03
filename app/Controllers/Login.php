@@ -12,14 +12,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST["login"])){
         
         if($user_object->login($_POST)){
-            echo "Login was successful.";
+            $_SESSION["message"] = "Login was successful.";
+            header("location: ".BASE_URL."store");
+            exit;
         } else {
-            echo "Incorrect Details.";
+            $_SESSION["message"] = "Incorrect Details.";
         }
     }
 }
 
 // require and load views
 require_once APP_DIR."Views/header.php";
+require_once APP_DIR."Views/includes/alerts.php";
 require_once APP_DIR."Views/pages/login-1.php";
 require_once APP_DIR."Views/footer.php";

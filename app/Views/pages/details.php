@@ -19,7 +19,7 @@
                             <input name="cart_quantity" type="number" value="1" min="1" class="form-control" id="usr">
                         </div>
                     </div>
-                    <div class="col-md-10">
+                    <div class="col-md-10"> 
                         <button name="add_to_cart" class="btn btn-primary btn-lg">Add to cart</button>
                     </div>
                 </div>

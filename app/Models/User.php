@@ -64,13 +64,13 @@ class User
         if($user && password_verify($inputs["password"], $user["password"])) 
         {
             // if user exists 
-            echo "Found a user";
+            // echo "Found a user";
             $user["password"] = null;  // make sure it doesn't save password
             $_SESSION["current_user"] = $user;
             return true;
         } else {
             // if the user is not found
-            echo "No user found.";
+            //echo "No user found.";
         }
 
         return false;

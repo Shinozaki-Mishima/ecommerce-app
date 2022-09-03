@@ -15,4 +15,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // require and load views
-require_once APP_DIR."Views/pages/registration.php";
+require_once APP_DIR."Views/header.php";
+require_once APP_DIR."Views/pages/registration-1.php";
+require_once APP_DIR."Views/footer.php";
