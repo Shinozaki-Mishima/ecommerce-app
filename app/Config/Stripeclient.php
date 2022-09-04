@@ -8,7 +8,7 @@ class Stripeclient
     {
         try {
 
-            return new \Stripe\StripeClient($_ENV["STRIPE_TEST_SECRET"]);
+            return new \Stripe\StripeClient($_ENV["STRIPE_SECRET"]);
         } catch (Exception $e) {
             echo "Invalid API key";
             exit();

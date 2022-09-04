@@ -209,7 +209,8 @@
 			 					<div class="summary-item"><span class="text">Discount</span><span class="price">$0</span></div>
 			 					<div class="summary-item"><span class="text">Shipping</span><span class="price">$0</span></div>
 			 					<div class="summary-item"><span class="text">Total</span><span class="price">$<?php echo $cart_object->getTotal();?></span></div>
-			 					<button type="button" class="btn btn-primary btn-lg btn-block">Checkout</button>
+			 					
+								<?php require_once APP_DIR."Views/includes/stripe-ui.php";?>
 				 			</div>
 			 			</div>
 		 			</div> 

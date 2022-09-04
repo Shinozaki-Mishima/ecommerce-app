@@ -18,6 +18,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once APP_DIR."Utils/code.isLoggedIn.php";
         // id comes from details page
         $cart_object->addToCart($user_id, $id, $_POST["cart_quantity"]);
+
+        header("location:".BASE_URL."cart");
     }
 }
 

@@ -32,6 +32,13 @@ switch ($payment) {
 
     case 'stripe':
         # code...
+        $payment_object = new Stripehelper();
+        $checkoutOrder = $payment_object->getCheckoutOrder($id);
+        Debugger::debug($checkoutOrder);
+        $completed = $payment_object->isCheckoutCompleted($checkoutOrder);
+        $data = $payment_object->getPaymentDetails($checkoutOrder);
+        Debugger::debug($data);
+        
         break;
     
     default:
@@ -44,6 +51,9 @@ if(!$completed || empty($data)) {
     echo "payment process not completed.";
     exit;
 }
+
+// TODO: FOR TESTING DO NOT INSERT INFO
+//exit;
 
 // Insert order
 $order_id = $order_object->insertOrder(
