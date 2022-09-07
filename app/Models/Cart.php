@@ -9,6 +9,7 @@ class Cart
     private $sub_total = 0;
     private $total = 0;
     private $discount_percent = 0;
+    private $discount_price = 0;
     private $cart_details = array();
 
     /**
@@ -43,6 +44,7 @@ class Cart
                 
             $this->total += $data["product_price"] * $data["cart_quantity"];
             $this->discount_percent += $data["discount_percent"];
+            $this->discount_price = ($this->discount_percent / 100) * $this->total;
         }
         $this->cart_details = $result;
 
@@ -111,5 +113,10 @@ class Cart
     // get discount 
     public function getDiscount() {
         return $this->discount_percent;
+    }
+
+    // get discounted price 
+    public function getDiscountPrice() {
+        return number_format($this->discount_price, 2);
     }
 }
