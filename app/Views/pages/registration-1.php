@@ -59,7 +59,7 @@
 
 
 
-    <body id="LoginForm">
+    <body >
         <div class="container">
             <!-- <h1 class="form-heading">login Form</h1> -->
             <div class="login-form">

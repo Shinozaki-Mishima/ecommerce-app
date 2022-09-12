@@ -3,6 +3,8 @@
 class Product
 {
     protected $pdo = null;
+    private $discount = 0;
+    
     /**
      * Constructor that takes pdo connection
      */
@@ -32,4 +34,25 @@ class Product
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    // // get product discount percent
+    // public function getCartDetails($user_id)
+    // {
+    //     $sql = "SELECT * 
+    //     FROM cart, products, discounts 
+    //     WHERE cart.product_id = products.product_id
+    //     AND products.discount_id = discounts.discount_id
+    //     AND cart.user_id = ?
+    //     AND cart.cart_status = 'cart'";
+
+    //     $stmt = $this->pdo->prepare($sql);
+    //     $stmt->execute([$user_id]);
+    //     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    //     // get the sub total
+    //     foreach ($result as $data) {
+    //         $this->discount += $data["discount_percent"];
+    //     }
+    //     return $this->discount;
+    // }
 }

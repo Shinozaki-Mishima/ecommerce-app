@@ -71,3 +71,5 @@ $order_object->insertOrderDetails($cart_details, $order_id);
 // Update items in stock
 
 // Send user to thanks page
+header("location: " . BASE_URL . "thanks");
+exit;

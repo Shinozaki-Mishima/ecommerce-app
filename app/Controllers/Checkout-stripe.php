@@ -8,6 +8,7 @@ $cart_object->calculateTotal();
 $stripe = Stripeclient::getClient();
 
 //require 'vendor/autoload.php';
+// test card num - 4242 4242 4242 4242
 // This is your test secret API key.
 //\Stripe\Stripe::setApiKey('sk_test_51JnmnlEgJDFZ4b1rIAfcQgklnMwn2ToEdIJrxkbKzivY2eXyX7Z3T5aIFh2DXTV1P6BiOPgo49eUtSvOHvj8v6ko00pntJCUOi');
 

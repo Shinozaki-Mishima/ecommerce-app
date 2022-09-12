@@ -18,8 +18,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $productDetails = $product_object->getAllProducts();
 
+
 // require and load views
-require_once APP_DIR."Views/header.php";
+require_once APP_DIR."Views/header-1.php";
 require_once APP_DIR."Views/includes/alerts.php";
-require_once APP_DIR."Views/pages/store.php";
+require_once APP_DIR."Views/pages/store-1.php";
 require_once APP_DIR."Views/footer.php";

@@ -22,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // require and load views
-require_once APP_DIR."Views/header.php";
+require_once APP_DIR."Views/header-1.php";
 require_once APP_DIR."Views/includes/alerts.php";
-require_once APP_DIR."Views/pages/login-1.php";
+require_once APP_DIR."Views/pages/login-2.php";
 require_once APP_DIR."Views/footer.php";

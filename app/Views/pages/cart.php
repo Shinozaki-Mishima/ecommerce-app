@@ -215,7 +215,7 @@
 			 					<div class="summary-item"><span class="text">Discount</span><span class="price">%<?php echo $cart_object->getDiscount()?></span></div>
 			 					<div class="summary-item"><span class="text">Discount Price</span><span class="price">$<?php echo $cart_object->getDiscountPrice();?></span></div>
 			 					<div class="summary-item"><span class="text">Total</span><span class="price">$<?php echo $cart_object->getTotal();?></span></div>
-			 					<button type="button" class="btn btn-primary btn-lg btn-block">Checkout</button>
+			 					<a href="<?php echo BASE_URL."checkout";?>" class="btn btn-primary btn-lg btn-block">Checkout</a>
 				 			</div>
 			 			</div>
 		 			</div> 

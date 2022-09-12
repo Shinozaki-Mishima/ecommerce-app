@@ -40,6 +40,9 @@ post('/checkout/stripe', 'app/Controllers/Checkout-stripe.php');
 get('/checkout/success/$payment/$id', 'app/Controllers/Checkout-success.php');
 post('/checkout/success/$payment/$id', 'app/Controllers/Checkout-success.php');
 
+get('/thanks', 'app/Controllers/Thanks.php');
+post('/thanks', 'app/Controllers/Thanks.php');
+
 
 // admin
 get('/admin/products/add', 'app/Controllers/admin/Adminproduct.php');

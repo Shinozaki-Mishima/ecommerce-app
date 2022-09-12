@@ -27,6 +27,11 @@ $cart_object->calculateTotal();
 // }
 
 // require and load views
-require_once APP_DIR."Views/header.php";
-require_once APP_DIR."Views/pages/cart.php";
+require_once APP_DIR."Views/header-1.php";
+if(empty($cartDetails)) {
+    require_once APP_DIR."Views/includes/cart-empty.php";
+} else {
+    require_once APP_DIR."Views/pages/cart.php";
+}
+
 require_once APP_DIR."Views/footer.php";

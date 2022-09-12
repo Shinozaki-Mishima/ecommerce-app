@@ -17,6 +17,11 @@ $cart_object->calculateTotal();
 // }
 
 // require and load views
-require_once APP_DIR."Views/header.php";
-require_once APP_DIR."Views/pages/checkout.php";
+require_once APP_DIR."Views/header-1.php";
+if(empty($cartDetails)){
+    $_SESSION["message"] = "Please add atleast 1 product to the cart.";
+    header("location: ".BASE_URL."store");
+} else {
+    require_once APP_DIR."Views/pages/checkout.php";
+}
 require_once APP_DIR."Views/footer.php";
