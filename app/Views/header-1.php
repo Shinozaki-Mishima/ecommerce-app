@@ -6,7 +6,7 @@
     padding: 10px 0px;
 }
 header .navbar-brand {
-    max-width: 250px;
+    max-width: 100px;
 }
 header .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 12px;
@@ -61,12 +61,12 @@ header .dropdown:hover span.dropdown-toggle {
     <header>
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="home">
-                    <img src="images/logo.png" alt="logo" class="img-fluid" width="60" height="auto" />
+                <a class="navbar-brand" href="<?php echo BASE_URL."home";?>">
+                    <img src="images/logo.png" alt=" " class="img-fluid" width="60" height="30" />
                 </a>
                 <button class="navbar-toggler" 
-                type="button" d
-                ata-toggle="collapse" 
+                type="button" 
+                data-toggle="collapse" 
                 data-target="#bs4navbar" 
                 aria-controls="navbarNav" 
                 aria-expanded="false" 
@@ -78,7 +78,7 @@ header .dropdown:hover span.dropdown-toggle {
                     <hr>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link active" href="home">Home</a>
+                            <a class="nav-link active" href="<?php echo BASE_URL."home";?>">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo BASE_URL . "store";?>">Store Page</a>
