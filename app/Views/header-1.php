@@ -62,7 +62,7 @@ header .dropdown:hover span.dropdown-toggle {
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="home">
-                    <img src="images/logo.png" alt="logo" class="img-fluid" width="50" height="50" />
+                    <img src="images/logo.png" alt="logo" class="img-fluid" width="60" height="auto" />
                 </a>
                 <button class="navbar-toggler" 
                 type="button" d
