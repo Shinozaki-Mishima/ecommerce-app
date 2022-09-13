@@ -86,11 +86,13 @@
 
                 <div class="slider-product-details">
                     <div class="slider-product-title">
-                        <small><?php echo $data["product_title"]; ?></small>
+                        <small>
+                            <?php echo $data["product_title"]; ?>
+                        </small>
                     </div>
 
                     <div class="slider-product-price">
-                        <?php echo $data["product_price"]; ?>
+                        $<?php echo $data["product_price"]; ?>
                     </div>
 
                 </div>

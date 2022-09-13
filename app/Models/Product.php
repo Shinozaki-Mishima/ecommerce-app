@@ -43,6 +43,7 @@ class Product
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
         return $result;
     }
     // get latest products
@@ -52,6 +53,7 @@ class Product
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
         return $result;
     }
     // get best sellers
@@ -61,9 +63,11 @@ class Product
         FROM order_details, products
         WHERE order_details.product_id = products.product_id
         GROUP BY order_details.product_id";
+
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
         return $result;
     }
     // get weekly best sellers 
@@ -75,9 +79,11 @@ class Product
         AND order_details_created >= '2022-09-1 00:00:00'
         AND order_details_created <= '2022-09-13 23:59:00'
         GROUP BY order_details.product_id";
+
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
         return $result;
     }
     // get recommended products
@@ -88,9 +94,11 @@ class Product
         (SELECT DISTINCT product_id FROM order_details WHERE order_id in
         (SELECT DISTINCT order_id FROM order_details WHERE product_id = ?)
         AND product_id != ?)";
+
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$product_id, $product_id]);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
         return $result;
     }
     

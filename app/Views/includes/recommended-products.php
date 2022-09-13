@@ -234,7 +234,11 @@ div {
                             </div>
                             <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
                                 
-                                <div class="bbb_deals_item_category"><?php echo $data["product_title"]; ?></div>
+                                <div class="bbb_deals_item_category">
+                                    <a href="<?php echo $link;?>">
+                                        <?php echo $data["product_title"]; ?>
+                                    </a>
+                                </div>
                                 <div class="bbb_deals_item_price ml-auto">$<?php echo $data["product_price"]; ?></div>
                             </div>
                             <div class="available">
