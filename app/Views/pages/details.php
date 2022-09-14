@@ -28,7 +28,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <p>About</p>
+                    <b><p>Product Description:</p></b>
                     <p><?php echo $data["product_description"]; ?></p>
                 </div>
             </div>

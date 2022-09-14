@@ -36,16 +36,13 @@
                     <a href="<?php echo BASE_URL; ?>admin/products/add">Add Products</a>
                 </li>
                 <li>
-                    <a href="#">Events</a>
+                    <a href="<?php echo BASE_URL; ?>admin/discounts">Manage Discounts</a>
+                </li>
+                <li>
+                    <a href="<?php echo BASE_URL; ?>store">Back to store</a>
                 </li>
                 <li>
                     <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
                 </li>
             </ul>
         </div>

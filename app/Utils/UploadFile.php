@@ -14,7 +14,7 @@ function startValidation($images)
         $image->new_name = getFileName($image->input_name, "products");
     }
 
-    Debugger::debug($images);
+    //Debugger::debug($images);
     return true;
 }
 
