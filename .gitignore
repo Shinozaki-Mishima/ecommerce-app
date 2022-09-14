@@ -1,5 +1,5 @@
 # Ignore folder, not necessary for project
-_dev/
+#_dev/
 
 # Ignore images, OPTIONAL
 images/
