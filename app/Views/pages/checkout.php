@@ -189,10 +189,9 @@
                                                             <label for="quantity">Quantity:</label>
                                                             <input id="quantity" type="number" value ="<?php echo $data["cart_quantity"];?>" class="form-control quantity-input">
                                                         </div>
-                                                        <div class="col-md-3 price">
-                                                            <span><?php echo Customhelper::calculateDiscountAmount(
-                													$data["product_price"], 
-                													$data["discount_percent"]); ?></span>
+														<div class="col-md-3">
+															<label for="price">Price:</label>
+                                                            <span class="price"><?php echo $data["product_price"] ?></span>
                                                         </div>
                                                     </div>
                                                 </div>
