@@ -8,6 +8,7 @@ require_once APP_DIR."Models/Product.php";
 require_once APP_DIR."Models/Cart.php";
 require_once APP_DIR."Models/Order.php";
 require_once APP_DIR."Models/Stripehelper.php";
+require_once APP_DIR."Utils/Point.php";
 require_once APP_DIR."Utils/code.isLoggedIn.php";
 require_once APP_DIR."Utils/Customhelper.php";
 

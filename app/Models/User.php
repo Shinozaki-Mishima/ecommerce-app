@@ -75,4 +75,19 @@ class User
 
         return false;
     }
+
+    /*NOTE: following utility functions related to loyalty system*/
+
+    // update loyalty points
+    public function updateTotalPoints($user_id, $total_points) {
+        $sql = "UPDATE users SET total_points = ? WHERE user_id = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$total_points, $user_id]);
+    }
+
+    // set total points
+    public function setTotalPoints($new_points) {
+        $_SESSION["current_user"]["total_points"] = $new_points;
+    }
+
 }  // end of class

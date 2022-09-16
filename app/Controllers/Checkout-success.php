@@ -55,6 +55,12 @@ if(!$completed || empty($data)) {
 // TODO: FOR TESTING DO NOT INSERT INFO
 //exit;
 
+// set points info
+$points_used = $cart_object->getPointsUsed();
+$points_gained = $cart_object->getPointsGained();
+$points_discount_amount = $cart_object->getPointsDiscountAmount();
+$total_points = ($cart_object->getUserTotalPoints() + $points_gained) - $points_used;
+
 // Insert order
 $order_id = $order_object->insertOrder(
     $user_id,
@@ -68,7 +74,12 @@ $order_id = $order_object->insertOrder(
 // Insert order details
 $order_object->insertOrderDetails($cart_details, $order_id);
 
-// Update items in stock
+// Update user points
+$user_object->updateTotalPoints($user_id, $total_points);
+$user_object->setTotalPoints($points_gained);
+// reset session
+$cart_object->resetSessions();
+
 
 // Send user to thanks page
 header("location: " . BASE_URL . "thanks");

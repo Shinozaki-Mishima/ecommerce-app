@@ -174,7 +174,7 @@
                                                                 <a href="#"><?php echo $data["product_title"];?></a>
 
                                                                 <form action="cart" method="post">
-                                                                    <button class="btn btn-danger" type="submit" name="remove_from_cart">Remove</button>
+                                                                    <button class="btn btn-outline-danger btn-sm" type="submit" name="remove_from_cart">Remove</button>
                                                                     <input type="hidden" name="cart_id" value="<?php echo $data["cart_id"]; ?>">
                                                                 </form>
 
@@ -212,6 +212,8 @@
 			 					<div class="summary-item"><span class="text">Discount Price</span><span class="price">$<?php echo $cart_object->getDiscountPrice();?></span></div>
 			 					<div class="summary-item"><span class="text">Total</span><span class="price">$<?php echo $cart_object->getTotal();?></span></div>
 			 					
+								<?php require_once APP_DIR . "Views/includes/checkout_points.php";?>
+
 								<?php require_once APP_DIR."Views/includes/stripe-ui.php";?>
 				 			</div>
 			 			</div>

@@ -10,6 +10,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $cartDetails = $cart_object->getCartDetails($user_id);
+// check to see if info was posted
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // check to see if points_used was posted to the server
+    if(isset($_POST["points"])){
+        // tell the cart obj to set points used
+        $cart_object->setPointsUsed($_POST["points"]);
+    }
+}
 $cart_object->calculateTotal();
 
 // foreach ($productDetails as $data) {
@@ -18,6 +26,7 @@ $cart_object->calculateTotal();
 
 // require and load views
 require_once APP_DIR."Views/header-1.php";
+require_once APP_DIR."Views/includes/alerts.php";
 if(empty($cartDetails)){
     $_SESSION["message"] = "Please add atleast 1 product to the cart.";
     header("location: ".BASE_URL."store");
