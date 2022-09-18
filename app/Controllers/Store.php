@@ -23,4 +23,5 @@ $productDetails = $product_object->getAllProducts();
 require_once APP_DIR."Views/header-1.php";
 require_once APP_DIR."Views/includes/alerts.php";
 require_once APP_DIR."Views/pages/store-1.php";
+require_once APP_DIR."Views/includes/chatbot.php";
 require_once APP_DIR."Views/footer.php";
