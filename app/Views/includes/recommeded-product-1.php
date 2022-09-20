@@ -50,6 +50,7 @@
     }
 </style>
 
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
 <div class="full-slider my-5">
@@ -59,13 +60,20 @@
         <hr>
     </div>
 
-
     <ul class="slider-controls" id="slider-controls1">
         <li class="left">
-            <i class="fas fa-chevron-left"></i> 
+            <button class="btn btn-light btn-sm">
+                <span class="material-icons">
+                    arrow_back_ios
+                </span>
+            </button>
         </li>
         <li class="right">
-            <i class="fas fa-chevron-right"></i> 
+            <button class="btn btn-light btn-sm">
+                <span class="material-icons">
+                    arrow_forward_ios
+                </span>
+            </button>
         </li>
     </ul>
 

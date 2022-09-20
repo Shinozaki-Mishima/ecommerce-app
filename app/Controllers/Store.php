@@ -16,8 +16,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$productDetails = $product_object->getAllProducts();
+// Debugger::debug($_GET);
 
+if($_SERVER["REQUEST_METHOD"] == "GET") {
+    if(!empty($_GET)){
+        $productDetails = $product_object->filterProducts($_GET);
+    } else {
+        $productDetails = $product_object->getAllProducts();
+    }
+}
 
 // require and load views
 require_once APP_DIR."Views/header-1.php";

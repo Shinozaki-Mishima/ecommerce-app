@@ -206,6 +206,9 @@ div {
 </style>
 
 <div class="container mydiv">
+    
+    <?php require_once APP_DIR."Views/includes/store-filter.php";?>
+
     <div class="row">
 
         <?php foreach ($productDetails as $data): 

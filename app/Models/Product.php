@@ -102,4 +102,48 @@ class Product
         return $result;
     }
     
+    // filter products where inputs = array
+    public function filterProducts($inputs)
+    {
+        $sql = $sql = "SELECT *,
+        CAST(product_price - (discount_percent / 100 * product_price) AS DECIMAL(7,2)) product_discount_price
+        FROM products, discounts
+        WHERE products.discount_id = discounts.discount_id";
+
+        foreach ($inputs as $key => $value) {
+            // check if the val is empty
+            if(empty($value)){
+                continue;
+            }
+            // use switch to check filter method category, price etc.
+            switch ($key) {
+                case 'category':
+                    $sql .= " AND product_category = '$value'";
+                    break;
+                case 'search':
+                    $sql .= " AND product_title LIKE '%$value%'";
+                    break;
+                case 'min_price':
+                    $sql .= " AND product_price >= '$value'";
+                    break;
+                case 'max_price':
+                    $sql .= " AND product_price <= '$value'";
+                    break;
+                default:
+                    # code...
+                    break;
+            }
+        }
+
+        // $sql = "SELECT *,
+        // CAST(product_price - (discount_percent / 100 * product_price) AS DECIMAL(7,2)) product_discount_price
+        // FROM products, discounts
+        // WHERE products.discount_id = discounts.discount_id
+        // ";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
 }  // end of class
