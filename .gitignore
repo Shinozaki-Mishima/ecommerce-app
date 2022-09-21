@@ -8,6 +8,6 @@ images/
 vendor/
 
 # Ignore .env files, API keys should hidden
-.env
+#.env
 
 .envServer
