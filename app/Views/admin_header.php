@@ -39,7 +39,7 @@
                     <a href="<?php echo BASE_URL; ?>admin/discounts">Manage Discounts</a>
                 </li>
                 <li>
-                    <a href="<?php echo BASE_URL; ?>store">Back to store</a>
+                    <a href="<?php echo BASE_URL; ?>logout">Sign Out</a>
                 </li>
                 <li>
                     <a href="#">About</a>
