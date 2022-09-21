@@ -1,9 +1,36 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+<button 
+    class="btn btn-outline-danger my-4" 
+    type="button" 
+    data-toggle="collapse" 
+    data-target="#search-filter" 
+    aria-expanded="false" 
+    aria-controls="search-filter">
+    Search or Filter
+</button>
 
-<div class="card p-2 my-4">
-    <h5 class="mb-3">Filters:</h5>
+<div class="card p-2 my-4 collapse" id="search-filter">
+<h5 class="mb-3">Search:</h5>
+    <div class="row">
+
+        <div class="col-md-3">
+            <form action="store" method="get">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        
+                            <input type="text" placeholder="search" name="search" class="form-control" id="search">
+                            <button class="btn btn-default"> 
+                                <span class="material-icons">search</span> 
+                            </button>
+                         
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <h5 class="mb-3">Filter:</h5>
+
     <div class="row">
 
         <div class="col-md-3">
@@ -13,10 +40,14 @@
                         
                             <select name="category" class="form-control" id="category">
                                 <option value="0">Select Category</option>
-                                <option>Cookware</option>
-                                <option>Appliances</option>
-                                <option>Knife Sets</option>
-                                <option>Kitchen Tools</option>
+                                <?php 
+                                    $categories = $product_object->getAllCategories();
+                                    foreach ($categories as $category):
+                                ?>
+                                <option>
+                                    <?php echo $category["product_category"]; ?>
+                                </option>
+                                <?php endforeach; ?>
                             </select>
                          
                     </div>
@@ -68,12 +99,16 @@
                 <div class="input-group">
                     <div class="input-group-prepend">
                         
-                            <input type="text" placeholder="search" name="search" class="form-control" id="search">
-                            <button class="btn btn-default"> 
-                                <span class="material-icons">search</span> 
-                            </button>
+                            <select name="order" class="form-control" id="order">
+                                <option value="0">Order by</option>
+                                <option value="order-title">Product Title (A-Z)</option>
+                                <option value="order-title-desc">Product Title (Z-A)</option>
+                                <option value="order-price">Price (low-high)</option>
+                                <option value="order-price-desc">Price (high-low)</option>
+                            </select>
                          
                     </div>
+                    <button class="btn btn-default"> <span class="material-icons">done</span> </button>
                 </div>
             </form>
         </div>

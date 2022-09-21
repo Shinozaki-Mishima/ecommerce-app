@@ -129,17 +129,46 @@ class Product
                 case 'max_price':
                     $sql .= " AND product_price <= '$value'";
                     break;
+                case 'order':
+                    $sql .= $this->orderBy($value);
+                    break;
                 default:
                     # code...
                     break;
             }
         }
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
 
-        // $sql = "SELECT *,
-        // CAST(product_price - (discount_percent / 100 * product_price) AS DECIMAL(7,2)) product_discount_price
-        // FROM products, discounts
-        // WHERE products.discount_id = discounts.discount_id
-        // ";
+    // order by funct
+    public function orderBy($key){
+        switch ($key) {
+            case 'order-title':
+                return " ORDER BY product_title ASC";
+                break;
+            case 'order-title-desc':
+                return " ORDER BY product_title DESC";
+                break;
+            case 'order-price':
+                return " ORDER BY product_price ASC";
+                break;
+            case 'order-price-desc':
+                return " ORDER BY product_price DESC";
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+    }
+
+    // get all categories
+    public function getAllCategories()
+    {
+        $sql = "SELECT DISTINCT product_category FROM products";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

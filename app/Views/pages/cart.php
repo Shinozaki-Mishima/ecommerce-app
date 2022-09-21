@@ -142,9 +142,11 @@
 	<title>Shopping Cart</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
 	<main class="page">
@@ -174,7 +176,9 @@
                                                                 <a href="#"><?php echo $data["product_title"];?></a>
 
                                                                 <form action="cart" method="post">
-                                                                    <button class="btn btn-outline-danger btn-sm" type="submit" name="remove_from_cart">Remove</button>
+                                                                    <button class="btn btn-outline-danger btn-sm" type="submit" name="remove_from_cart">
+																		Remove
+																	</button>
                                                                     <input type="hidden" name="cart_id" value="<?php echo $data["cart_id"]; ?>">
                                                                 </form>
 
@@ -214,7 +218,10 @@
 			 					<div class="summary-item"><span class="text">Discount</span><span class="price">%<?php echo $cart_object->getDiscount()?></span></div>
 			 					<div class="summary-item"><span class="text">Discount Price</span><span class="price">$<?php echo $cart_object->getDiscountPrice();?></span></div>
 			 					<div class="summary-item"><span class="text">Total</span><span class="price">$<?php echo $cart_object->getTotal();?></span></div>
-			 					<a href="<?php echo BASE_URL."checkout";?>" class="btn btn-outline-primary btn-block">Checkout</a>
+			 					<h7 class="text">Proceed to Checkout:</h7>
+								<a href="<?php echo BASE_URL."checkout";?>" class="btn btn-outline-primary btn-block">
+								 <span class="material-icons">shopping_cart_checkout</span> 
+								</a>
 				 			</div>
 			 			</div>
 		 			</div> 

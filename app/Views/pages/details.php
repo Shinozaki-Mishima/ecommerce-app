@@ -1,3 +1,5 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <div class="container my-4">
     <div class="row">
         <div class="col-md-6">
@@ -20,7 +22,7 @@
                         </div>
                     </div>
                     <div class="col-md-10"> 
-                        <button name="add_to_cart" class="btn btn-primary btn-lg">Add to cart</button>
+                        <button name="add_to_cart" class="btn btn-outline-primary btn-lg"> <span class="material-icons">shopping_cart</span> Add to cart</button>
                     </div>
                 </div>
 

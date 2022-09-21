@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div class="row">
     <div class="col-md-12">
         <p>Loyalty Points</p>
@@ -10,7 +11,9 @@
                 <option value="500">$25 off - 500 points</option>
                 <option value="1000">$50 off - 1000 points</option>
             </select>
-            <button name="points_btn" type="submit" class="btn btn-outline-primary btn-block">Exchange</button>
+            <button name="points_btn" type="submit" class="btn btn-outline-primary btn-block" > 
+                <span class="material-icons"> currency_exchange </span>  
+            </button>
         </form>
         <ul>
             <li>Current Points: <?php echo $cart_object->getUserTotalPoints();?></li>
