@@ -67,7 +67,7 @@ class User
             // echo "Found a user";
             $user["password"] = null;  // make sure it doesn't save password
             $_SESSION["current_user"] = $user;
-            // if email is the admin email, foward to admin dashboard
+            // if email inputted = the admin email, foward to admin dashboard
             if($user["email"] == $_ENV["ADMIN_EMAIL"]) { 
                 header("location: ".BASE_URL."admin/dashboard");
                 exit;

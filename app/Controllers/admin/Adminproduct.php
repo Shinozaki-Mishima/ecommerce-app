@@ -45,7 +45,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         echo "you clicked a button to edit";
 
         $images = [
-            new Customimage("product_image1", 1, $_POST["previous_product_image1"]),
+            new Customimage("product_image1", 0, $_POST["previous_product_image1"]),
             new Customimage("product_image2", 0, $_POST["previous_product_image2"]),
             new Customimage("product_image3", 0, $_POST["previous_product_image3"]),
             new Customimage("product_image4", 0, $_POST["previous_product_image4"])
