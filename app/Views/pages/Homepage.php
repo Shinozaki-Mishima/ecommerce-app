@@ -76,10 +76,10 @@
                 <div class="row g-0">
                     <div class="col-lg-6 text-white showcase-img" style="background-image: url('images/bg-showcase-2.png')"></div>
                     <div class="col-lg-6 my-auto showcase-text">
-                        <h2>Quality Knive Sets</h2>
+                        <h2>Quality Knife Sets</h2>
                         <p class="lead mb-0">
-                            Purchase knive sets within any budget, ranging from low cost but high quality 
-                            knive sets for everyday use or state of the art knive sets used by michelin star chiefs
+                            Purchase knife sets within any budget, ranging from low cost but high quality 
+                            knife sets for everyday use or state of the art knife sets used by michelin star chiefs.
                         </p>
                     </div>
                 </div>
@@ -103,17 +103,11 @@
         <section class="call-to-action text-white text-center" id="signup">
             <div class="container position-relative">
                 <div class="row justify-content-center">
+
                     <div class="col-xl-6">
                         <h2 class="text-center mb-4">Ready to get started? Sign up now!</h2>
-                        <!-- Signup form-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
                         <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN">
+                            
                             <!-- Register -->
                             <div class="row"> 
                                 <div class="col">
@@ -123,6 +117,7 @@
                              
                         </form>
                     </div>
+
                 </div>
             </div>
         </section>
