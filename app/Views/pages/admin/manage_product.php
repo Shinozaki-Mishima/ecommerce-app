@@ -67,7 +67,7 @@
 
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" style="display: none;">
                         <label for="product_image2">Optional Image:</label>
                         <input type="file" class="form-control" id="product_image2" name="product_image2" value="<?php echo $product_image2; ?>">
                         <input type="text" class="form-control" id="previous_product_image2" name="previous_product_image2" value="<?php echo $product_image2; ?>">
@@ -85,7 +85,7 @@
 
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" style="display: none;">
                         <label for="product_image3">Optional Image:</label>
                         <input type="file" class="form-control" id="product_image3" name="product_image3" value="<?php echo $product_image3; ?>">
                         <input type="text" class="form-control" id="previous_product_image3" name="previous_product_image3" value="<?php echo $product_image3; ?>">
@@ -101,7 +101,7 @@
                         <?php endif; ?>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" style="display: none;">
                         <label for="product_image4">Optional Image:</label>
                         <input type="file" class="form-control" id="product_image4" name="product_image4" value="<?php echo $product_image4; ?>">
                         <input type="text" class="form-control" id="previous_product_image4" name="previous_product_image4" value="<?php echo $product_image4; ?>">
