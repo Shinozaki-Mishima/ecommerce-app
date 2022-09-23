@@ -39,7 +39,7 @@ class Product
     // get randomly recommended products
     public function getRandomProducts()
     {
-        $sql = "SELECT * FROM products ORDER BY RAND() LIMIT 4";
+        $sql = "SELECT * FROM products ORDER BY RAND() LIMIT 13";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -49,7 +49,7 @@ class Product
     // get latest products
     public function getLatestProducts()
     {
-        $sql = "SELECT * FROM products ORDER BY product_created DESC LIMIT 4";
+        $sql = "SELECT * FROM products ORDER BY product_created DESC LIMIT 9";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
