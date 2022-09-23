@@ -99,7 +99,7 @@ header .dropdown:hover span.dropdown-toggle {
                             <a class="nav-link" href="<?php echo BASE_URL . "cart";?>">Cart</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About Us</a>
+                            <a class="nav-link" href="<?php echo BASE_URL . "about";?>">About Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"> </a>
