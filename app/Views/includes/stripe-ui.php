@@ -2,7 +2,7 @@
 <script src="https://js.stripe.com/v3/"></script>
     
 <form action="checkout/stripe" method="POST">
-    <button class="btn btn-primary btn-block" type="submit" id="checkout-button">Checkout</button>
+    <button class="btn btn-outline-danger btn-block" type="submit" id="checkout-button">Checkout</button>
 </form>
 
    

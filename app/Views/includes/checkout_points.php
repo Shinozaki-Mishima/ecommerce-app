@@ -1,7 +1,17 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 20
+}
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+
 <div class="row">
-    <div class="col-md-12">
-        <p>Loyalty Points</p>
+    <div class="col">
         <form action="checkout" method="post">
             <select class="form-control" name="points" id="points">
                 <option value="0">Reset</option>
@@ -11,8 +21,9 @@
                 <option value="500">$25 off - 500 points</option>
                 <option value="1000">$50 off - 1000 points</option>
             </select>
-            <button name="points_btn" type="submit" class="btn btn-outline-primary btn-block" > 
-                <span class="material-icons"> currency_exchange </span>  
+            <button name="points_btn" type="submit" class="btn btn-outline-danger btn-block"> 
+                Loyalty Points Exchange
+                <!-- <span class="material-symbols-outlined"> currency_exchange </span>   -->
             </button>
         </form>
         <ul>
