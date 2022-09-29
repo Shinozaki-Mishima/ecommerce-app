@@ -12,4 +12,4 @@ $product_object = new Product($db_object);
 // required views
 require_once APP_DIR."Views/header-1.php";
 require_once APP_DIR."Views/pages/about.php";
-require_once APP_DIR."Views/footer.php";
+//require_once APP_DIR."Views/footer.php";
