@@ -86,7 +86,7 @@ h5{
     margin-top: 4vh;
 }
 hr{
-    margin-top: 1.25rem;
+    margin-top: 1rem;
 }
 form{
     padding: 2vh 0;
@@ -200,12 +200,14 @@ a:hover{
             <p>GIVE CODE</p>
             <input id="code" placeholder="Enter your code">
         </form> -->
-        <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+        <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 1.5vh 0;">
             <div class="col">TOTAL PRICE</div>
             <div class="col text-right">$<?php echo $cart_object->getTotal();?></div>
         </div> 
+        <hr>
         <div class="col">Loyalty Points</div>
             <?php require_once APP_DIR . "Views/includes/checkout_points.php";?>
+            <hr>
             <?php require_once APP_DIR."Views/includes/stripe-ui.php";?>
     </div>
 </div>
