@@ -143,7 +143,7 @@ class Product
         return $result;
     }
 
-    // order by funct
+    // order by function
     public function orderBy($key){
         switch ($key) {
             case 'order-title':

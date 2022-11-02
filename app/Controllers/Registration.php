@@ -11,6 +11,8 @@ $user_object = new User($db_object);
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST["registration"])){
         $user_object->register($_POST);
+        header("location: ".BASE_URL."login");
+        exit;
     }
 }
 

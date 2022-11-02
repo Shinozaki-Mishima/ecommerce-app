@@ -48,7 +48,7 @@ class User
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($data);
     }
-    // login model
+    // login function
     public function login($inputs) 
     {
         /**
@@ -69,7 +69,7 @@ class User
             $_SESSION["current_user"] = $user;
             // if email inputted = the admin email, foward to admin dashboard
             if($user["email"] == $_ENV["ADMIN_EMAIL"]) { 
-                header("location: ".BASE_URL."admin/dashboard");
+                header("location: ".BASE_URL."admin/products/view");
                 exit;
             }
             return true;
