@@ -110,13 +110,16 @@ class Product
         FROM products, discounts
         WHERE products.discount_id = discounts.discount_id";
 
-        foreach ($inputs as $key => $value) {
+        foreach ($inputs as $key => $value) 
+        {
             // check if the val is empty
-            if(empty($value)){
+            if(empty($value))
+            {
                 continue;
             }
             // use switch to check filter method category, price etc.
-            switch ($key) {
+            switch ($key) 
+            {
                 case 'category':
                     $sql .= " AND product_category = '$value'";
                     break;
@@ -144,8 +147,10 @@ class Product
     }
 
     // order by function
-    public function orderBy($key){
-        switch ($key) {
+    public function orderBy($key)
+    {
+        switch ($key) 
+        {
             case 'order-title':
                 return " ORDER BY product_title ASC";
                 break;

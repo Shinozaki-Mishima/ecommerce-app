@@ -56,7 +56,7 @@
 
         
         <!-- Featured Products -->
-        <?php require_once APP_DIR."Views/includes/random-products.php"; ?>
+        <?php require_once APP_DIR."Views/includes/Best-Selling-products.php"; ?>
 
 
         <!-- Image Showcases-->

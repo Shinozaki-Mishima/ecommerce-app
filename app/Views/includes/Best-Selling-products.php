@@ -56,7 +56,7 @@
 <div class="full-slider my-5">
     
     <div class="heading">
-        <h1 class="text-center">Featured Products</h1>
+        <h1 class="text-center">Best Selling Products</h1>
         <hr>
     </div>
 
@@ -82,7 +82,7 @@
         <div class="my-slider" id="my-slider1">
 
         <?php
-        $product_details = $product_object->getRandomProducts();
+        $product_details = $product_object->getBestSellingProducts();
         foreach ($product_details as $data) :
             $link = BASE_URL . "details/{$data["product_id"]}";
         ?>

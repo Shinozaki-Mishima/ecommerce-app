@@ -5,7 +5,7 @@
 
 <div class="container"> 
     <div class="alert alert-primary">
-      <strong>Alert!</strong> <?php echo $message; ?>
+      <strong>Notice!</strong> <?php echo $message; ?>
     </div>
 </div>
 
