@@ -1,6 +1,24 @@
-<div class="container">
-    <div class="jumbotron">
-        <h1>No Product Found.</h1>
-        <p>Please return to <a href="<?php echo BASE_URL . "store";?>">store</a> and search for another product.</p>
-    </div>
+<div class="container-fluid  mt-100">
+	<div class="row">	 
+		<div class="col-md-12">	
+			<div class="card">
+				<div class="card-header">
+					<h5></h5>
+				</div>
+				<div class="card-body cart">
+					<div class="col-sm-12 empty-cart-cls text-center">
+						<img src="images/search_error.png" width="130" height="130" class="img-fluid mb-4 mr-3">
+						<h3><strong>We could not find what you were searching for.</strong></h3>
+						<h4>Please try looking again, or browse for additional items.</h4>
+						<a 
+            			href="<?php echo BASE_URL."store"; ?>" 
+            			class="btn btn-outline-danger cart-btn-transform m-3" 
+            			data-abc="true">continue shopping</a>
+					</div>
+				</div>
+			</div>	
+		</div>
+				 
+	</div>
+				
 </div>

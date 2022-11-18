@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             header("location: ".BASE_URL."store");
             exit;
         } else {
-            $_SESSION["message"] = "Incorrect Details.";
+            $_SESSION["message"] = "Incorrect Login Details, Please try again.";
         }
     }
 }
