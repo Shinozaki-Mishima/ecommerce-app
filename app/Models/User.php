@@ -14,6 +14,25 @@ class User
         $this->pdo = $pdo->pdo;
     }
 
+    public function emailExists($pdo, $email) {
+        $stmt = $pdo->prepare("SELECT 1 FROM users WHERE email=?");
+        $stmt->execute([$email]);
+        return $stmt->fetchColumn();
+    }
+
+    public function passwordExists($pdo, $inputs) {
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE email=?");
+        $stmt->execute([$inputs["email"]]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if($user && password_verify($inputs["password"], $user["password"])) {
+            $_SESSION["message"] = "Password already in use, Please try again.";
+            header("location: ".BASE_URL."registration");
+            exit;
+        }
+
+    }
+
     public function register($inputs) 
     {
         $data = [
@@ -45,9 +64,25 @@ class User
         );        
         ";
 
+        // check to see if the user exists 
+        if($this->emailExists($this->pdo, $data["email"])){
+            $_SESSION["message"] = "Email already exists, Please attempt to login.";
+            header("location: ".BASE_URL."registration");
+            exit;
+        } 
+        // check to ensure all fields are filled
+        if(empty($inputs["email"]) || empty($inputs["password"]) || empty($inputs["first_name"]) || empty($inputs["last_name"])){
+            $_SESSION["message"] = "An Error occurred! Please fill out all fields and try again.";
+            header("location: ".BASE_URL."registration");
+            exit;
+        }
+
+        //$this->passwordExists($this->pdo, $inputs);
+
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($data);
     }
+
     // login function
     public function login($inputs) 
     {
@@ -74,11 +109,12 @@ class User
             }
             return true;
         } else {
-            // if the user is not found
-            //echo "No user found.";
+            // if(empty($inputs["email"]) || empty($inputs["password"])){
+            //     $_SESSION["message"] = "An Error occurred! User not found or fields were not entered.";
+            //     header("location: ".BASE_URL."login");
+            //     exit;
+            // }
         }
-
-
         return false;
     }
 
