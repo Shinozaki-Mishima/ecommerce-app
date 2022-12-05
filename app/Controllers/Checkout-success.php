@@ -76,7 +76,7 @@ $order_object->insertOrderDetails($cart_details, $order_id);
 
 // Update user points
 $user_object->updateTotalPoints($user_id, $total_points);
-$user_object->setTotalPoints($points_gained);
+$user_object->setTotalPoints($total_points);
 // reset session
 $cart_object->resetSessions();
 

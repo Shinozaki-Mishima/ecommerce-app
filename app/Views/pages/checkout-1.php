@@ -191,7 +191,7 @@ a:hover{
             <div class="col text-right">%<?php echo $cart_object->getDiscount()?></div>
         </div>
         <div class="row my-1">
-            <div class="col" style="padding-left:0;">Discount Price</div>
+            <div class="col" style="padding-left:0;">You saved</div>
             <div class="col text-right">$<?php echo $cart_object->getDiscountPrice();?></div>
         </div>
         <!-- <form>

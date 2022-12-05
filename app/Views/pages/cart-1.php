@@ -168,7 +168,7 @@ a:hover{
                     <a href="#"></a><a href="#" class="border"><?php echo $data["cart_quantity"];?></a><a href="#"></a>
                 </div>
                 <form action="cart" method="post">
-                    <div class="col ">$<?php echo $data["product_price"] ?> <button class="close ml-3" type="submit" name="remove_from_cart">&#10005;</button></div>
+                    <div class="col ">$<?php echo $data["product_price"] ?><button class="close ml-3" type="submit" name="remove_from_cart">&#10005;</button></div>
                     <input type="hidden" name="cart_id" value="<?php echo $data["cart_id"]; ?>">
                 </form>
             </div>
@@ -192,7 +192,7 @@ a:hover{
             <div class="col text-right">%<?php echo $cart_object->getDiscount()?></div>
         </div>
         <div class="row my-1">
-            <div class="col" style="padding-left:0;">Discount Price</div>
+            <div class="col" style="padding-left:0;">You saved</div>
             <div class="col text-right">$<?php echo $cart_object->getDiscountPrice();?></div>
         </div>
         <!-- <form>

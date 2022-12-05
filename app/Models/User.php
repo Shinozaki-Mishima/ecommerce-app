@@ -20,18 +20,17 @@ class User
         return $stmt->fetchColumn();
     }
 
-    public function passwordExists($pdo, $inputs) {
-        $stmt = $pdo->prepare("SELECT * FROM users WHERE email=?");
-        $stmt->execute([$inputs["email"]]);
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    // public function passwordExists($pdo, $inputs) {
+    //     $stmt = $pdo->prepare("SELECT * FROM users WHERE email=?");
+    //     $stmt->execute([$inputs["email"]]);
+    //     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if($user && password_verify($inputs["password"], $user["password"])) {
-            $_SESSION["message"] = "Password already in use, Please try again.";
-            header("location: ".BASE_URL."registration");
-            exit;
-        }
-
-    }
+    //     if($user && password_verify($inputs["password"], $user["password"])) {
+    //         $_SESSION["message"] = "Password already in use, Please try again.";
+    //         header("location: ".BASE_URL."registration");
+    //         exit;
+    //     }
+    // }
 
     public function register($inputs) 
     {
